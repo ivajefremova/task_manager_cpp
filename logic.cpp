@@ -21,8 +21,21 @@ class TaskManager {
         Task* newTask = new Task();
         (*newTask).description = desc;   //set the description of the new task
         (*newTask).priority = prio;         //set the priority of the new task
-        (*newTask).next = head;        //point the next of the new task to the current head (basically going down the list)
-        head = newTask;           //then set the head to the new task (the new task is now the first element in the list)
+
+        if (head == nullptr || prio < (*head).priority) {
+            (*newTask).next = head;
+            head = newTask;
+            return;
+        }
+
+        Task* current = head;
+        
+        while ((*current).next != nullptr && (*((*current).next)).priority <= prio) {
+        current = (*current).next;
+        }
+
+        (*newTask).next = (*current).next;        //point the next of the new task to the current head (basically going down the list)
+        (*current).next = newTask;           //then set the head to the new task (the new task is now the first element in the list)
 
     }
 
