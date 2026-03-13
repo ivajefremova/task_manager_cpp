@@ -23,11 +23,11 @@ class TaskManager {
         (*newTask).priority = prio;         //set the priority of the new task
 
         if (head == nullptr || prio < (*head).priority) {
-        (*newTask).next = head;
-        head = newTask;
-        return;
+            (*newTask).next = head;
+            head = newTask;
+            return;
         }
-        
+
         Task* current = head;
         
         while ((*current).next != nullptr && (*((*current).next)).priority <= prio) {
