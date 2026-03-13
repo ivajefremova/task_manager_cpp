@@ -1,0 +1,15 @@
+*.exe
+*.o
+*.obj
+*.out
+*.app
+bin/
+build/
+.vscode/
+.history/
+*.log
+[Dd]s_[Ss]tore
+Thumbs.db
+desktop.ini
+*.swp
+*~
