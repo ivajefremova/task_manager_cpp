@@ -23,5 +23,9 @@ int main(){
 
         instance.addTask(task_description, priority);
     }
+
+    instance.displayTasks();
+
+    return 0;
     
 }
